@@ -1,14 +1,16 @@
 name: Deploy Function
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       actualFunction:
         description: Name of function to deploy
         required: true
+    branches:
+      - main
+    
+      
+
 
 jobs:
   deploy:
