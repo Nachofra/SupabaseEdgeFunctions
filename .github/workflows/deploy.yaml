@@ -1,0 +1,29 @@
+name: Deploy Function
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      actualFunction:
+        description: Name of function to deploy
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy Edge Functions to Production
+    runs-on: ubuntu-22.04
+
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PROJECT_ID: vcdtctgenstlqmcmmtjc
+      FUNCTION_NAME: ${{ inputs.actualFunction }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 1.33.0
+
+      - run: supabase functions deploy $FUNCTION_NAME --import-map ./supabase/functions/import_map.json --project-ref $PROJECT_ID

@@ -1,0 +1,12 @@
+# Local files
+.env
+.vscode
+
+# Supabase modules
+node_modules
+package-lock.json
+package.json
+
+# Supabase
+.branches
+.temp
