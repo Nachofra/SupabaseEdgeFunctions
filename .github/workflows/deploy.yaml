@@ -6,10 +6,6 @@ on:
       actualFunction:
         description: Name of function to deploy
         required: true
-    branches:
-      - main
-    
-      
 
 
 jobs:
