@@ -23,4 +23,4 @@ jobs:
         with:
           version: 1.33.0
 
-      - run: supabase functions deploy $FUNCTION_NAME --import-map ./supabase/functions/import_map.json --project-ref $PROJECT_ID
+      - run: supabase functions deploy $FUNCTION_NAME --import-map ./supabase/functions/import_map.json --project-ref ${{ env.PROJECT_ID }}
