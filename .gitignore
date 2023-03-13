@@ -1,6 +1,7 @@
 # Local files
 .env
 .vscode
+.env.local
 
 # Supabase modules
 node_modules
@@ -10,3 +11,4 @@ package.json
 # Supabase
 .branches
 .temp
+schema.sql
